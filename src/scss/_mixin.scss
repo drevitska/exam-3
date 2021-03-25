@@ -1,0 +1,4 @@
+@mixin line($width, $height) {
+  border-bottom: $height solid $bgc;
+  width: $width;
+}

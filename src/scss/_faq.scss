@@ -1,0 +1,35 @@
+.faq {
+  &__wrap {
+    width: 570px;
+    margin: 0 auto;
+    padding: 150px 0;
+  }
+  &__list {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    border-bottom: 2px solid #eaedde;
+  }
+  &__item {
+    border-top: 2px solid #eaedde;
+  }
+  &__togg {
+    text-decoration: none;
+    color: $text-green;
+    // font-size: 18px;
+    font-weight: 300;
+    letter-spacing: 0.28em;
+    margin: 30px 0;
+    display: inline-block;
+  }
+  &__plus {
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    margin-right: 27px;
+    background-image: url(../img/plus.png);
+  }
+  &__collapse {
+    margin: 30px 0 10px 47px;
+  }
+}

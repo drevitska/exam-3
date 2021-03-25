@@ -1,0 +1,73 @@
+.section-product {
+  text-transform: uppercase;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+.product {
+  &__title {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 30px;
+    letter-spacing: 0.2em;
+    font-weight: 400;
+    margin-bottom: 80px;
+  }
+  &__slid-1, &__slid-2 {
+    margin-right: 30px;
+  }
+  &__slider {
+    display: flex;
+    margin-bottom: 75px;
+    &_card {
+      width: 450px;
+      height: 430px;
+      border: 1px solid $bgc-second;
+      background-color: #fff;
+      display: flex;
+      flex-direction: column;
+    }
+    &_stars {
+      list-style-type: none;
+      display: flex;
+      justify-content: center;
+      margin-top: 40px;
+      margin-bottom: 26px;
+    }
+    &_star {
+      color: $text-green;
+      margin: 3px;
+    }
+    &_name {
+      color: $text;
+      letter-spacing: 0.15em;
+      margin: 0 auto;
+      margin-bottom: 41px;
+    }
+    &_info {
+      display: flex;
+    }
+    &_img {
+      width: auto;
+      height: 246px;
+      margin: 0 auto;
+      margin-bottom: 50px;
+    }
+    &_price {
+      width: 260px;
+      background-color: $bg-price;
+      color: $text;
+      padding: 30px;
+      border: 1px solid $bgc-second;
+      letter-spacing: 0.15em;
+    }
+    &_shop {
+      width: 190px;
+      color: #fff;
+      background-color: $text-green;
+      padding: 30px;
+    }
+  }
+
+}
+
+

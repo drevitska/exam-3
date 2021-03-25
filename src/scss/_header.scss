@@ -1,0 +1,81 @@
+.header {
+  position: fixed;
+  height: 80px;
+  width: 100vw;
+  padding-left: 36px;
+  border-bottom: 1px solid #fafbf8;
+  color: $bgc;
+  text-transform: uppercase;
+  display: flex;
+  justify-content: space-between;
+  z-index: 100;
+  &_dark {
+    color: $text;
+    background-color: #fffa;
+  }
+  &__logo {
+    &-wrap {
+      display: flex;
+      align-items: center;
+    }
+  }
+}
+.nav {
+  &__list {
+    display: flex;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    align-items: center;
+  }
+  &__item {
+    margin: 0 24px;
+  }
+  &__link {
+    color: $bgc;
+    text-decoration: none;
+    &.active {
+      position: relative;
+      &::before {
+        content: '';
+        position: absolute;
+        width: calc(100% + 20px);
+        height: 2px;
+        background-color: #9db892;
+        top: 50%;
+        left: -10px;
+      }
+    }
+    &_dark {
+      color: $text;
+    }
+  }
+}
+.user {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  height: 100%;
+  align-items: stretch;
+  &__item {
+    padding: 0 36px;
+    border-left: 1px solid #fafbf8;
+    display: flex;
+    align-items: center;
+  }
+  &__link {
+    color: $bgc;
+    text-decoration: none;
+    &_dark {
+      color: $text;
+    }
+  }
+  &__serarch {
+    a>i {
+      margin-right: 8px;
+    }
+    
+  }
+}

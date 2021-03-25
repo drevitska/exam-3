@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+  <script src="https://kit.fontawesome.com/e30b5219a9.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="css/styles.min.css">
+  <title>Exam</title>
+</head>
+
+<body>
+  <div class="vue-wrap" id="app">
+    <header class="header">
+      <nav class="header__nav nav">
+        <ul class="nav__list">
+          <li class="nav__item" v-for="item in nav_list">
+            <a href="#" class="nav__link" @click="goToLink(item.id)" :key="item.id"
+              :class="{active : item.active }">{{ item.name }}
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <div class="header__logo-wrap">
+        <div class="header__logo">
+          CBD
+        </div>
+      </div>
+      <div class="header__user-block">
+        <ul class="user">
+          <li class="user__item user__login"><a href="#" class="user__link">Login</a></li>
+          <li class="user__item user__serarch"><a href="#" class="user__link"><i class="fas fa-search"></i>Search</a>
+          </li>
+          <li class="user__item user__cart"><a href="#" class="user__link">Cart</a></li>
+        </ul>
+      </div>
+
+    </header>
+    <section class="section section-intro">
+      <div class="container">
+        <div class="intro">
+          <h1 class="intro__title">Enhancing Life <br>
+            Excelling in Care</h1>
+          <p class="intro__slogan">Choose Wisely. Choose CBD.</p>
+          <a href="#Products" class="btn intro__btn" type="button">Start Shopping </a>
+          <a href="#Products" class="intro__link">See all products <i class="fas fa-long-arrow-alt-right"></i></a>
+        </div>
+
+      </div>
+      <div class="section-intro__side-text">CBD Potion health</div>
+      <a href="#About" class="section-intro__chevron"><i class="fas fa-angle-down"></i></a>
+    </section>
+
+    <section class="section section-about" id="about">
+      <div class="container">
+        <div class="about__board">
+          <h3 class="about__slogan">We are what we are</h3>
+          <div class="about__logos"></div>
+        </div>
+
+        <div class="tabs">
+          <!-- captions -->
+          <ul class="tabs__list">
+            <li class="tabs__item" v-for="tab in tabs" :class="{'active': tab.active}" :key="tab.id">
+              <a class="tabs__caption" @click="setActive(tab)">{{tab.caption}}</a>
+            </li>
+          </ul>
+          <!-- tabs -->
+          <div class="tabs__card" v-for="tab in tabs" :class="{ 'tabs__card_active' : tab.active}">
+
+            <div class="tabs__info">
+              <div class="tabs__title"> {{ tab.title }} </div>
+              <p class="tabs__text">
+                CBD is short for cannabidiol.It is a phytocannabinoid found in hemp and known
+                for supporting the body and mind in many ways.*Charlotte’ s Web products have cannabinoids with CBD
+                extract.
+              </p>
+              <p class="tabs__text">
+                Not to be confused with oil from hemp seeds(which doesn’ t contain cannabinoids), CBD comes from the
+                flowers and leaves of the hemp plant.
+              </p>
+              <p class="tabs__text">
+                Why does CBD work ? The human body has a vast network of receptors, the endocannabinoid system.
+              </p>
+            </div>
+            <div class="tabs__imgs">
+              <img class="tabs__img" src="img/tab-1.png" alt="foto">
+              <img class="tabs__img" src="img/tab-2.png" alt="foto">
+
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+    <section class="section section-product" id="product">
+      <h2 class="product__title">
+        CBD Featured Products
+      </h2>
+      <div class="product__slider">
+        <div class="product__slid product__slid-1">
+          <div class="product__slider_card">
+            <ul class="product__slider_stars">
+              <li><i class="fas fa-star product__slider_star"></i></li>
+              <li><i class="fas fa-star product__slider_star"></i></li>
+              <li><i class="fas fa-star product__slider_star"></i></li>
+              <li><i class="fas fa-star product__slider_star"></i></li>
+              <li><i class="fas fa-star product__slider_star"></i></li>
+            </ul>
+            <div class="product__slider_name">
+              CBD 500 mg Orange Flavor Tincture
+            </div>
+            <img class="product__slider_img" src="img/product-1.png" alt="foto">
+          </div>
+          <div class="product__slider_info">
+            <div class="product__slider_price">
+              $49.99 USD
+            </div>
+            <div class="product__slider_shop">
+              Shop
+            </div>
+          </div>
+        </div>
+        <div class="product__slid product__slid-2">
+          <div class="product__slider_card">
+            <ul class="product__slider_stars">
+              <li><i class="fas fa-star product__slider_star"></i></li>
+              <li><i class="fas fa-star product__slider_star"></i></li>
+              <li><i class="fas fa-star product__slider_star"></i></li>
+              <li><i class="fas fa-star product__slider_star"></i></li>
+              <li><i class="fas fa-star product__slider_star"></i></li>
+            </ul>
+            <div class="product__slider_name">
+              Black ICE CBD Muscle Rub 200 mg
+            </div>
+            <img class="product__slider_img" src="img/product-2.png" alt="foto">
+          </div>
+          <div class="product__slider_info">
+            <div class="product__slider_price">
+              $49.99 USD
+            </div>
+            <div class="product__slider_shop">
+              Shop
+            </div>
+          </div>
+        </div>
+        <div class="product__slid product__slid-3">
+          <div class="product__slider_card">
+            <ul class="product__slider_stars">
+              <li><i class="fas fa-star product__slider_star"></i></li>
+              <li><i class="fas fa-star product__slider_star"></i></li>
+              <li><i class="fas fa-star product__slider_star"></i></li>
+              <li><i class="fas fa-star product__slider_star"></i></li>
+              <li><i class="fas fa-star product__slider_star"></i></li>
+            </ul>
+            <div class="product__slider_name">
+              CBD+Curcumin Coffee 750 mg
+            </div>
+            <img class="product__slider_img" src="img/product-3.png" alt="foto">
+          </div>
+          <div class="product__slider_info">
+            <div class="product__slider_price">
+              $79.99 USD
+            </div>
+            <div class="product__slider_shop">
+              Shop
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section section-faq">
+      <div class="faq__wrap">
+        <h3 class="section__title">Frequently asked questions</h3>
+        <ul class="faq__list">
+          <li class="faq__item">
+            <a href="#" class="faq__togg"><span class="faq__plus"></span>What is Cannabidiol (CBD)?</a>
+            <div class="faq__collapse">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio expedita iste iure iusto distinctio modi
+              aliquid quaerat cum animi aperiam!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio expedita
+              iste iure iusto distinctio modi aliquid quaerat cum animi aperiam!
+            </div>
+          </li>
+          <li class="faq__item">
+            <a href="#" class="faq__togg"><span class="faq__plus"></span>Is Hemp-Derived Cannabidiol (CBD) Legal? </a>
+            <div class="faq__collapse">
+              Because CBD from hemp has no psychoactive effects, the purchase, sales, or possession of hemp CBD products
+              are completely legal in all 50 States.
+            </div>
+          </li>
+          <li class="faq__item">
+            <a href="#" class="faq__togg"><span class="faq__plus"></span>Are there any negative side effects?</a>
+            <div class="faq__collapse">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio expedita iste iure iusto distinctio modi
+              aliquid quaerat cum animi aperiam!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio expedita
+              iste iure iusto distinctio modi aliquid quaerat cum animi aperiam!
+            </div>
+          </li>
+          <li class="faq__item">
+            <a href="#" class="faq__togg"><span class="faq__plus"></span>Do you offer a return policy?</a>
+            <div class="faq__collapse">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio expedita iste iure iusto distinctio modi
+              aliquid quaerat cum animi aperiam!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio expedita
+              iste iure iusto distinctio modi aliquid quaerat cum animi aperiam!
+            </div>
+          </li>
+
+        </ul>
+
+      </div>
+
+    </section>
+    <section class="section section-testimonials">
+      <div class="testim__wrap">
+        <div class="testim__info">
+          <ul class="testim__star-list">
+            <li><i class="fas fa-star product__slider_star"></i></li>
+            <li><i class="fas fa-star product__slider_star"></i></li>
+            <li><i class="fas fa-star product__slider_star"></i></li>
+            <li><i class="fas fa-star product__slider_star"></i></li>
+            <li><i class="fas fa-star product__slider_star"></i></li>
+          </ul>
+          <p class="testim__text">
+            I have tried another product after using this one successfully, and I am Back for good! The flavour, the
+            lightness of the oil and the health benefits I have gotten with this oil are amazing!
+          </p>
+          <p class="testim__sign"><span>Mark J.</span></p>
+        </div>
+
+      </div>
+      
+
+    </section>
+  </div>
+
+
+  </div>
+  <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+    crossorigin="anonymous"></script>
+  <script src="js/scripts.min.js"></script>
+  <!-- <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script> -->
+
+  <!-- <script>
+    $('.product__slider').slick({
+      dots: false,
+      infinite: true,
+      speed: 300,
+      slidesToShow: 3,
+      adaptiveHeight: true,
+      prevArrow: '<a class="slick-prev"><</a>',
+      nextArrow: '<a class="slick-next">></a>',
+      responsive: [{
+          breakpoint: 1024,
+          settings: {
+            slidesToShow: 3,
+            slidesToScroll: 1
+          }
+        },
+        {
+          breakpoint: 968,
+          settings: {
+            slidesToShow: 2,
+            slidesToScroll: 1
+          }
+        },
+        {
+          breakpoint: 576,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1
+          }
+        }
+      ]
+    });
+  </script> -->
+</body>
+
+</html>

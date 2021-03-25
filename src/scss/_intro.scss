@@ -1,0 +1,85 @@
+
+.section-intro {
+  height: 100vh;
+  background-image: url(../img/bg-intro.jpg);
+  background-size: cover;
+  background-position: bottom center;
+  display: flex;
+  align-items: center;
+  position: relative;
+  &__side-text {
+    color: $bgc;
+    position: absolute;
+    left: 0;
+    transform-origin: 0, 100%;
+    transform: rotateZ(-90deg);
+    text-transform: uppercase;
+    bottom: 175px;
+    &::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: -120px;
+      @include line(100px, 2px);
+    }
+  }
+  &__chevron {
+    position: absolute;
+    bottom: 60px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: $bgc;
+    font-size: 24px;
+  }
+}
+.intro {
+  height: 400px;
+  text-align: right;
+  color: $bgc;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-between;
+  &__title {
+    text-transform: uppercase;
+    font-size: 55px;
+    font-weight: 400;
+    margin: 0;
+    padding: 0;
+    letter-spacing: 0.28em;
+  }
+  &__slogan {
+    font-weight: 300;
+    font-size: 24px;
+    letter-spacing: 0.28em;
+  }
+  &__link {
+    color: $bgc;
+    text-decoration: none;
+    font-weight: 300;
+    letter-spacing: 0.28em;
+  }
+  &__btn {
+    position: relative;
+    background: none;
+    text-decoration: none;
+    border: 1px solid #9fb892;
+    padding: 25px 100px 25px 40px;
+    outline: none;
+    font-size: 20px;
+    text-transform: uppercase;
+    color: $bgc;
+    font-family: $font;
+    &::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      right: 40px;
+      @include line(45px, 2px);
+    }
+  }
+}
+
+
+
+

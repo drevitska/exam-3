@@ -1,0 +1,47 @@
+.section-testimonials {
+  height: 800px;
+  background-image: url(../img/testim-bg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.testim {
+  &__wrap {
+    width: 768px;
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    text-align: center;
+  }
+  &__info {}
+  &__star-list {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+    margin-bottom: 26px;
+  }
+  &__text {
+    font-size: 22px;
+    color: #fff;
+    letter-spacing: 0.2em;
+    text-align: center;
+    font-weight: 300;
+  }
+  &__sign {
+    font-size: 24px;
+    text-transform: uppercase;
+    color: #fff;
+    
+    & span {
+      position: relative;
+    }
+    & span::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: -60px;
+      @include line(45px, 2px);
+    }
+  }
+}
